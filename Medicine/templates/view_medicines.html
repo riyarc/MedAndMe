@@ -1,0 +1,80 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block links %}
+
+{% endblock %}
+{% block content %}
+
+<div class="v553_86">
+	<div class="v553_87" >
+
+					{% for med in medicine %}
+
+							<div class="v556_8">
+								<div class="v580_0">
+
+								</div>
+								<span class="v579_86">
+
+										{{med.name}}
+									<!-- <span class="glyphicon glyphicon-pencil" id="edit-icon"></span> -->
+										<a href="/medicine/delete/{{med.pk}}/" style="text-decoration: none; color: inherit;" onclick="return confirmation()">
+											<span class="glyphicon glyphicon-trash" id="delete-icon"></span>
+										</a>
+									</span>
+								<span class="v790">
+										<!-- <br> -->
+
+										{{med.start_date}} - {{med.end_date}}
+
+									</span>
+
+									<span class="v579_87">Repeats -
+
+
+									</span>
+									<span class="v580_3">
+										{{med.repeat_magnitude}}
+									</span>
+									<span class="v580_5">
+
+										{{med.additional_info}}
+									</span>
+									<span class="v580_2">
+										Additional info -
+									</span>
+									<span class="v580_1">
+										Frequency -
+									</span>
+									<span class="v580_4">
+										{{med.repeat_unit}}
+									</span>
+
+
+
+
+							</div>
+
+						{% endfor %}
+
+						</div>
+
+
+						<span class="v556_31">
+							{{ heading }}
+						</span>
+					</div>
+
+{% endblock %}
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+</script>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,44 @@
+{% extends "base_page.html" %}
+{% load static %}
+
+{% block content %}
+<a href="/report/add/{{pk}}/">
+    <button class="btn btn-success" id="add-file">Add More Files</button>
+</a>
+<br><br>
+<a href="/report/delete/{{pk}}/">
+    <button class="btn btn-danger" id="delete_record" onclick="return confirmation()">Delete Report</button>
+</a>
+<br><br>
+
+{% if report_files %}
+    {% for file in report_img %}
+        <img src = "{{ file.file.url }}"  alt ="{{ file.file.url }}" width=500px />
+        <a href="/report/delete/file/{{ file.pk }}/" style="text-decoration: none; color: inherit;">
+            <button class="btn btn-danger" id="delete1{{file.pk}}" onclick="return confirmation()">Delete</button>
+        </a>
+<br><br>
+    {% endfor %}
+
+    {% for file in report_pdf %}
+        <a href = "/report/view/pdf/{{file.file.path}}" target="_blank">{{file.file.url}}</a>
+        <a href="/report/delete/file/{{ file.pk }}/">
+            <button class="btn btn-danger" id="delete2{{file.pk}}" onclick="return confirmation()">Delete</button>
+        </a>
+<br><br>
+    {% endfor %}
+{% else %}
+    <p> No reports available!</p>
+{% endif %}
+{% endblock %}
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+
+</script>
+
+
+{% endblock %}

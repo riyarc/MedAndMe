@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v457_110 {
+    width: 100%;
+    height: 1024px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+/*  
+  .v467_12 {
+    width: 946px;
+    height: 640px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 208px;
+    left: 299px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }*/
+  .v467_13 {
+    width: 171px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 690px;
+    left: 481px;
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: justified;
+  }
+  .v467_14 {
+    width: 171px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 584px;
+    left: 491px;
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v467_15 {
+    width: 171px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 505px;
+    left: 491px;
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v467_16 {
+    width: 252px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 432px;
+    left: 430px;
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v467_17 {
+    width: 512px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 57px;
+    left: 516px;
+    font-family: 'Baloo 2';
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: center;
+  }
+  
+  .v467_22 {
+    width: 317px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 650px;
+    left: 867px;
+    font-family: Siemreap;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v467_23 {
+    width: 215px;
+    height: 54px;
+    background: rgba(55,171,254,1);
+    opacity: 1;
+    position: absolute;
+    top: 850px;
+    left: 664px;
+    border: 1px solid rgba(22,104,226,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  
+    color: rgba(255,255,255,1);
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 43px;
+  }
+  
+  .v467_26 {
+    width: 344px;
+    height: 40px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 425px;
+    left: 823px;
+    border: 1px solid rgba(55,171,254,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .v467_27 {
+    width: 344px;
+    height: 40px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 500px;
+    left: 823px;
+    border: 1px solid rgba(55,171,254,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .v467_28 {
+    width: 344px;
+    height: 40px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 575px;
+    left: 823px;
+    border: 1px solid rgba(55,171,254,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .v467_29 {
+    width: 344px;
+    height: 100px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 650px;
+    left: 823px;
+    border: 1px solid rgba(55,171,254,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }

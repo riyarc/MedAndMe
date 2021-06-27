@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+
+  .add_files1{
+    width: auto;
+    height: 61px;
+    background: rgba(55,171,254,1);
+    opacity: 1;
+    position: relative;
+    top: 80px;
+    left: 28%; 
+    
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 43px;
+    color: white;
+  
+    border: 1px solid rgba(22,104,226,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 10px;
+  
+  }
+  
+  .delete_report{
+  
+    width: auto;
+    height: 61px;
+    background: rgba(55,171,254,1);
+    opacity: 1;
+    position: relative;
+    top: 80px;
+    left:40%;
+  
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 43px;
+    color: white;
+    
+    border: 1px solid rgba(22,104,226,1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 10px;
+    
+  
+  }
+
+  .delete_pdf{
+    width: auto;
+    height: 25px;
+    background: rgba(55,171,254,1);
+    opacity: 1;
+    position: relative;
+   
+    font-family: Signika;
+    font-weight: Regular;
+    font-size: 16px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  
+    border: 1px solid rgba(22,104,226,1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+   
+
+
+  .image{
+    border: 1px solid rgb(150, 139, 139);
+    border-radius: 8px;
+    padding: 5px;
+    top:20%;
+    left:10%;
+    align-items: center;
+  }
+
+  .data2{
+    width: 800px;
+    height: 170px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    top:15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 15px;
+  }
+  
+
+  

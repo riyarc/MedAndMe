@@ -1,0 +1,26 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<div class="z539_86">
+            <div class="z539_88">ADD REPORT FILES</div>
+            <div class="z575_0">
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <p>
+                        <label class="z575_1_4"> Report File :-- </label>
+                        <input type= "file" name="file" class = "custom-file-input1" multiple>
+                    </p>
+
+                    <input type="submit" value="ADD" class = "z575_3" >
+                </form>
+            </div>
+            <a href="/report/view"><button type="button" class="z539_123" > View All Records</button></a>
+        </div>
+    <!-- </body>
+
+</html> -->
+
+{% endblock content %}

@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="{% static 'css/base_page.css' %}" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+        <!-- <link href="{% static 'css/medform.css' %}" rel="stylesheet" /> -->
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+        <link href="{% static 'css/medicines_main.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/show_med.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/dashboard1.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/allergy_form.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/allergy_main.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/report_view.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/report_form.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/record_view.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/record_form.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/measurement.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/measurement_group_form.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/medicine_form.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/chart.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/blog.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="{% static 'css/add_files.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/view_record.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/view_allergy.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/view_report.css' %}" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+        {% block head_content %}{% endblock %}
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
+        <title>MED AND ME</title>
+    </head>
+
+    <body>
+
+        <div class="v414_65">
+            <div class= "upper_bar">
+            <div class="search_form">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent" >
+              <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <form action="{% url 'search' %}" method="GET">
+                    <input type="text" class="form-control" style="max-width: 30%; font-family: Georgia; font-size: 2vh;" name="search-query" id="search-query" placeholder="Search Queries with Filters">
+
+                    <label for="start-date" class="form-label" style="max-width: 3%; font-family: Georgia; font-size: 2vh;" id="start-date-label">From</label>
+                    <input type="date" class="form-control" style="max-width: 12%; font-family: Georgia; font-size: 2vh;" name="start-date" id="start-date">
+
+                    <label for="end-date" class="form-label" style="max-width: 3%; font-family: Georgia; font-size: 2vh;" id="end-date-label">Till</label>
+                    <input type="date" class="form-control" name="end-date" style="max-width: 12%; font-family: Georgia; font-size: 2vh;" id="end-date">
+
+                    <select class="form-select form-select-lg mb-3" style="font-family: Georgia; font-size: 2vh; max-width: 15%; display: inline;" id="search-for" onchange="setAttributesForModel()" name="search-for">
+                        <option value="MeasurementGroup">MeasurementGroup</option>
+                        <option value="Allergy">Allergy</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Record">Record</option>
+                        <option value="Report">Report</option>
+                    </select>
+
+                    <select class="form-select form-select-lg mb-3" style="font-family: Georgia; font-size: 2vh; max-width: 10%; display: inline;" id="search-by" name="search-by" onchange="setPlaceholders()">
+                        <option class="attributes MeasurementGroup" value="Group-Name">Group-Name</option>
+
+                        <option class="attributes Allergy" value="Cause">Allergy-Cause</option>
+                        <option class="attributes Allergy" value="Symptoms">Symptoms</option>
+
+                        <option class="attributes Medicine" value="Medicine-Name">Medicine-Name</option>
+
+                        <option class="attributes Record" value="Doctor-Name">Doctor-Name</option>
+                        <option class="attributes Record" value="Hospital-Name">Hospital-Name</option>
+                        <option class="attributes Record" value="Ailment-Type">Ailment-Type</option>
+
+                        <option class="attributes Report" value="Test-Name">Test-Name</option>
+                        <option class="attributes Record Medicine Report" value="Date">Date</option>
+                    </select>
+
+                    <button class="btn btn-primary" type="submit" onclick="btnclicked()" style="font-family: Helvetica; font-size: 2vh; max-width: 142.5px; display: inline;">Search</button>
+                  </form>
+<!--                    <form action="{% url 'search' %}" method="GET">-->
+<!--                        <input type="text" name="search-query" id="search-query">-->
+<!--                        <label for="start-date" id="start-date-label">From</label>-->
+<!--                        <input type="date" name="start-date" id="start-date">-->
+<!--                        <label for="end-date" id="end-date-label">Till</label>-->
+<!--                        <input type="date" name="end-date" id="end-date">-->
+<!--                        <select id="search-for" onchange="setAttributesForModel()" name="search-for">-->
+<!--                            <option value="MeasurementGroup">MeasurementGroup</option>-->
+<!--                            <option value="Allergy">Allergy</option>-->
+<!--                            <option value="Medicine">Medicine</option>-->
+<!--                            <option value="Record">Record</option>-->
+<!--                            <option value="Report">Report</option>-->
+<!--                    &lt;!&ndash;        <option value="Date">Date</option>&ndash;&gt;-->
+<!--                        </select>-->
+<!--                        <select id="search-by" name="search-by" onchange="setPlaceholders()">-->
+<!--                            <option class="attributes MeasurementGroup" value="Group-Name">Group-Name</option>-->
+<!--                    -->
+<!--                            <option class="attributes Allergy" value="Cause">Allergy-Cause</option>-->
+<!--                    -->
+<!--                            <option class="attributes Allergy" value="Symptoms">Symptoms</option>-->
+<!--                            <option class="attributes Medicine" value="Medicine-Name">Medicine-Name</option>-->
+<!--                            <option class="attributes Record" value="Doctor-Name">Doctor-Name</option>-->
+<!--                            <option class="attributes Record" value="Hospital-Name">Hospital-Name</option>-->
+<!--                            <option class="attributes Record" value="Ailment-Type">Ailment-Type</option>-->
+<!--                            <option class="attributes Report" value="Test-Name">Test-Name</option>-->
+<!--                            <option class="attributes Record Medicine Report" value="Date">Date</option>-->
+<!--                        </select>-->
+<!--                        <button>Search</button>-->
+<!--                    -->
+<!--                    </form>-->
+                </div>
+              </div>
+            </nav>
+        </div>
+            
+            </div>
+            <div class="v414_66"></div>
+                <a class="glyphicon glyphicon-home" href="/dashboard" id= "icon0" title="Dashboard"> </a>
+                <a class="glyphicon glyphicon-file" href="/record/add" id= "icon1" title="Add Record"> </a>
+                <a class="glyphicon glyphicon-edit" href="/report/add" id="icon2" title="Add Report"></a>
+                <a class="glyphicon glyphicon-signal" href="/measure/add-measurement/" id="icon3" title="Add Measurements"></a>
+                <a class="glyphicon glyphicon-th" href="/medicine/" id="icon4" title="Your Medicines"></a>
+            <div class="v414_67"></div>
+            <div class="name"> </div>
+            <div class="v414_71">
+                {% block content %}
+                {% endblock content%}
+            </div>
+            <div class="v414_72"></div>
+            <a class="v414_73" href="/dashboard"></a>
+            </div>
+            <div class="v414_88">
+
+            </div>
+                            <span class="v414_90">Welcome!</span>
+
+               
+                {% if user.is_authenticated %}
+                <span class="name"> <span class="v414_89">{{user}}</span></span>
+                    <span class="v277_74">
+                        
+                    
+                    <a class="" style = " font-weight: Medium ; color: black; font-family: "Roboto" ; font-size: 14px" href="/logout">Logout</a>
+                    </span>
+                {% else %}
+                    <span class="v277_74">
+                        
+                    
+                    <a class="" style = " font-weight: Medium ; color: black; font-family: "Roboto" ; font-size: 14px" href="/login">Login</a>
+                    </span>
+                {% endif %}
+            <div class="name"></div>
+        </div>
+        {% block script_content %} {% endblock %}
+        <script>
+        var wanted = document.getElementById('search-for').value;
+        var attributes = document.getElementsByClassName("attributes");
+        var i;
+        for(i=0; i<attributes.length; i++) {
+            attributes[i].setAttribute("disabled", "disabled");
+        }
+        for(i=0; i<attributes.length; i++) {
+            if(attributes[i].classList.contains(wanted)) {
+                attributes[i].removeAttribute("disabled");
+            }
+        }
+        document.getElementById('search-query').style.display = "inline";
+        document.getElementById('start-date').style.display = "none";
+        document.getElementById('end-date').style.display = "none";
+        document.getElementById('start-date-label').style.display = "none";
+        document.getElementById('end-date-label').style.display = "none";
+        function setAttributesForModel() {
+            var wanted = document.getElementById('search-for').value;
+            if(wanted == "Date") {
+                setAttributesForDate();
+                return;
+            }
+            document.getElementById('search-query').style.display = "inline";
+            document.getElementById('start-date').style.display = "none";
+            document.getElementById('end-date').style.display = "none";
+            document.getElementById('start-date-label').style.display = "none";
+            document.getElementById('end-date-label').style.display = "none";
+            console.log(wanted);
+            var attributes = document.getElementsByClassName("attributes");
+            var i;
+            for(i=0; i<attributes.length; i++) {
+                attributes[i].setAttribute("disabled", "disabled");
+            }
+            var val = "null";
+            for(i=0; i<attributes.length; i++) {
+                if(attributes[i].classList.contains(wanted)) {
+                    if(val == "null")
+                        val = attributes[i].value;
+                    attributes[i].removeAttribute("disabled");
+                }
+            }
+            document.getElementById('search-by').value = val;
+            console.log("Value:");
+            console.log(val);
+        };
+
+        function setAttributesForDate() {
+            document.getElementById('search-query').style.display = "none";
+            document.getElementById('start-date').style.display = "inline";
+            document.getElementById('end-date').style.display = "inline";
+            document.getElementById('start-date-label').style.display = "inline";
+            document.getElementById('end-date-label').style.display = "inline";
+        };
+
+        function setPlaceholders() {
+            var attr = document.getElementById('search-by').value;
+            var model = document.getElementById('search-for').value;
+
+            if(attr == "Date") {
+                return setAttributesForDate();
+            }
+        };
+        function btnclicked() {
+            console.log("Button Clicked");
+        };
+
+        </script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <!-- <script src="{% static 'js/chart.js' %}"></script> -->
+      <!--   <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script> -->
+<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+
+<!--===============================================================================================-->
+    <!-- <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script> -->
+    <!-- <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script> -->
+<!--===============================================================================================-->
+    <!-- <script src="{% static 'vendor/select2/select2.min.js' %}"></script> -->
+<!--===============================================================================================-->
+    <!-- <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script> -->
+<!--===============================================================================================-->
+    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+    </body>
+
+</html>

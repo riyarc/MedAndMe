@@ -1,0 +1,55 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/measurement_group_form.css' %}" rel="stylesheet" />
+    <title>Document</title>
+</head> -->
+
+<body>
+    <div class="v592_86">
+        <span class="v592_93">ADD MEASUREMENT GROUP</span>
+        <div class="v592_88">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>
+                    <label class="v592_92"> Measurement Group Name :-- </label>
+                    <input type= "text" name="name" class = "v592_94">
+                </p>
+    
+                <p>
+                    <label class="v592_92_1"> Unit :-- </label>
+                    <input type= "text" name="unit" class = "v592_94_1">
+                </p>
+    
+                <p>
+                    <label class="v592_92_2"> Lower Bound :-- </label>
+                    <input type= "number" step="any" name="lower_bound" class = "v592_94_2">
+                </p>
+    
+                <p>
+                    <label class="v592_92_3"> Upper Bound :-- </label>
+                    <input type= "number" step="any" name="upper_bound" class = "v592_94_3">
+                </p>
+    
+                <input type="submit" value="ADD" class = "v592_99" >
+    
+            </form>
+
+        </div>
+
+        
+    </div>
+<!-- </body>
+
+</html> -->
+
+{% endblock content %}

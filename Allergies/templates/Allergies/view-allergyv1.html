@@ -1,0 +1,81 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block links %}
+
+{% endblock %}
+{% block content %}
+
+<div class="v553_86">
+	<div class="v553_87" >
+
+					{% for alr in allergy %}
+
+							<div class="v556_8">
+								<div class="v580_0">
+
+								</div>
+								<span class="v579_86">
+
+										Description: {{alr.description}}
+										<span class="glyphicon glyphicon-pencil" id="edit-icon"></span>
+											<a href="/allergy/delete/{{ alr.pk }}/" style="text-decoration: none; color: inherit;" onclick="return confirmation()">
+												<span class="glyphicon glyphicon-trash" id="delete-icon"></span>
+											</a>
+										</span>
+								</span>
+								<span class="v790">
+										<!-- <br> -->
+
+										Medicine: {{alr.medicine}}
+
+									</span>
+
+<!--									<span class="v579_87">Symptoms - -->
+
+
+<!--									</span>-->
+									<span class="v580_3">
+										{{alr.additional_info}}
+									</span>
+									<span class="v580_5">
+
+
+									</span>
+									<span class="v580_2">
+<!--                                        Cause - -->
+									</span>
+									<span class="v580_1">
+<!--                                        {{ alr.symptoms }}-->
+									</span>
+									<span class="v580_4">
+<!--                                        {{ alr.symptoms }}-->
+									</span>
+
+
+
+
+							</div>
+
+						{% endfor %}
+
+						</div>
+
+
+						<span class="v556_31">
+							{{user}}'s ALLERGIES
+						</span>
+					</div>
+
+
+					{% endblock %}
+
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+</script>
+
+
+{% endblock %}

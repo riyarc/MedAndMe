@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+
+.doctor{
+  width: 100%;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+
+  font-family: "Baloo 2";
+  font-weight: Regular;
+  font-size: 40px;
+  opacity: 1;
+  text-align: center;
+}
+
+.area{
+  width: 80%;
+  height: auto;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 120px;
+  bottom: 100px;
+
+  margin-right: auto;
+  margin-left: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+.add_files{
+  width: auto;
+  height: 61px;
+  background: rgba(55,171,254,1);
+  opacity: 1;
+  position: relative;
+  top: 80px;
+  left: 28%; 
+  
+
+  
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+  color: white;
+
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+.delete_record{
+
+  width: auto;
+  height: 61px;
+  background: rgba(55,171,254,1);
+  opacity: 1;
+  position: relative;
+  top: 80px;
+  left:40%;
+
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+  color: white;
+  
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 10px;
+  
+
+}
+
+.delete_image{
+  width: auto;
+  height: 61px;
+  background: rgba(55,171,254,1);
+  opacity: 1;
+  position: relative;
+ 
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 10px;
+ 
+}
+
+.a{
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.b{
+  margin-left:auto;
+  margin-top: auto;
+  text-align: center;
+
+}
+
+.image{
+  border: 1px solid rgb(150, 139, 139);
+  border-radius: 8px;
+  padding: 5px;
+  top:20%;
+  left:10%;
+  align-items: center;
+}
+
+
+  .data{
+    width: 800px;
+    height: 170px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    top:15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 15px;
+  }
+  .record_date1{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: center;
+    font-size:  26px;
+    top: 7%
+  
+  }
+  .record_doctor1{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: left;
+    font-size:  23px;
+    top: 30%;
+    left: 3%;
+  
+  }
+  .record_hospital1{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: left;
+    font-size:  24px;
+    top: 50%;
+    left: 3%
+  
+  }
+  .record_ailment1{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: left;
+    font-size:  24px;
+    top: 70%;
+    left: 3%;
+  
+  }
+
+  .record_date1{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: center;
+    font-size:  26px;
+    top: 7%
+  
+  }
+
+  .doctor_label1{
+    font-size:  27px;
+    color: rgba(71,71,71,1);
+  }
+  .doctor_name1{
+    font-size:  30px;
+    font-weight: bold;
+  
+  }
+  .ailment_label1{
+    font-size:  27px;
+    color: rgba(71,71,71,1);
+  }
+  .ailment1{
+    font-size:  30px;
+    font-weight: bold;
+  
+  
+  }
+  .hospital_label1{
+    font-size:  27px;
+    color: rgba(71,71,71,1);
+  }
+  .hospital_name1{
+    font-size:  30px;
+    font-weight: bold;
+  
+  }
+  
+  

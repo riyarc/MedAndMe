@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v539_86 {
+  width: 100%;
+  height: 100%;
+  background: #F0F2F9;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: scroll;
+
+}
+
+.v539_88 {
+  width: 100%;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  /*left: 386px;*/
+  font-family: "Baloo 2";
+  font-weight: Regular;
+  font-size: 64px;
+  opacity: 1;
+  text-align: center;
+}
+.v575_0 {
+  width: 946px;
+  height: 640px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 100px;
+  /*left: 400px;*/
+  margin-right: auto;
+  margin-left: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v575_3 {
+  width: 215px;
+  height: 54px;
+  background: rgba(55,171,254,1);
+  opacity: 1;
+  position: absolute;
+  top: 550px;
+  left: 40%;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*padding-left: auto;*/
+  /*padding-right: auto;*/
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  color: rgba(255,255,255,1);
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+}
+.v575_2 {
+  width: 344px;
+  height: 40px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 450px;
+  border: 1px solid rgba(55,171,254,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.v575_2_1 {
+  width: 344px;
+  height: 40px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 150px;
+  left: 450px;
+  border: 1px solid rgba(55,171,254,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.v575_2_2 {
+  width: 344px;
+  height: 40px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 250px;
+  left: 450px;
+  border: 1px solid rgba(55,171,254,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.v575_2_3 {
+  width: 344px;
+  height: 40px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 350px;
+  left: 450px;
+  border: 1px solid rgba(55,171,254,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.v575_1 {
+  width: 252px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 50px;
+  left: 101px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v575_1_1 {
+  width: 252px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 150px;
+  left: 101px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v575_1_2 {
+  width: 252px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 250px;
+  left: 101px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v575_1_3 {
+  width: 252px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 350px;
+  left: 101px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v575_1_4 {
+  width: 252px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 450px;
+  left: 101px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+
+.v539_123 {
+  width: auto;
+  height: 61px;
+  background: rgba(55,171,254,1);
+  opacity: 1;
+  position: absolute;
+  top: 775px;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+  color: white;
+  left: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  /*left: 601px;*/
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  padding-right: 10px;
+  padding-left: 10px;
+  /*align-self: center;*/
+
+}
+.v539_124 {
+  width: 364px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  /*top: 825px;*/
+  /*left: 601px;*/
+  margin :auto;
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 43px;
+  opacity: 1;
+  text-align: center;
+}
+
+
+
+
+.custom-file-input {
+  /* content: 'Select some files';
+  display: inline-block; */
+
+  height: 34px;
+  background-color: white;
+  opacity: 1;
+
+  border: 1px solid rgba(22,104,226,1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  /* padding: 5px 8px; */
+  /* outline: none; */
+  /* white-space: nowrap; */
+  -webkit-user-select: none;
+  cursor: pointer;
+  /* text-shadow: 1px 1px #fff; */
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 20px;
+  color: black;
+  position: absolute;
+  top: 450px;
+  left: 450px;
+
+  width : 350px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select files';
+  display: inline-block;
+  background-color: rgba(55,171,254,1);
+  /* background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+  border: 1px solid  rgba(22,104,226,1);
+  border-radius: 15px;
+  /* padding: 5px 8px; */
+  outline: none;
+  /* white-space: nowrap; */
+  -webkit-user-select: none;
+  cursor: pointer;
+  /* text-shadow: 1px 1px #fff; */
+  font-family: Signika;
+  font-weight: Regular;
+  font-size: 20px;
+  color: white;
+  width: 100px;
+  height: 25px;
+  position: absolute;
+
+  margin-top: 3px;
+  margin-left: 2px;
+  padding-left: 2px;
+  /* padding-top: 5px; */
+  /* top: 700px; */
+  /* left: 770px; */
+}
+.custom-file-input:hover::before {
+  border-color: black;
+
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+
+}

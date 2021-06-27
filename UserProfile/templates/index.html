@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Salsa&display=swap" rel="stylesheet" />
+		<link href="{% static 'css/main.css' %}" rel="stylesheet" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<title>
+			Med And Me
+		</title>
+	</head>
+	<body>
+		<div class="v277_51">
+            <div class="d414_72"></div>
+            <div class="d414_73"></div>
+
+            <div class="v414_81">
+                <span class="v414_88" onclick="goToDashboard()"></span>
+            </div>
+                    {% if user.is_authenticated %}
+                        <a class="v277_74" href="/logout">Logout</a>
+                        <span class="v414_90">Welcome!</span>
+                        <span class="v414_89">{{user}}</span>
+                    {% else %}
+                        <a class="v277_74" href="/login">Login </a>
+
+                    <!-- <a class="v277_75" href="/signup">Sign Up</a> -->
+                    {% endif %}
+            </div>
+            
+            <div class="c414_71">
+                {% if user.is_authenticated %}
+<!--                    <a class="dash" href="/dashboard"> GO TO DASHBOARD </a>-->
+                {% endif %}
+
+
+                <span class="v277_69">Med and Me Welcomes you!</span>
+                <span class="v277_70">Features we offer you</span>
+
+                <div class="v277_57">
+                    <span class="glyphicon glyphicon-cloud-upload" id="icon-1"></span>
+                    <span class="v277_58"> UPLOAD & TRACK </span>
+                    <span class="v277_59">Upload all your Medical documents and Doctor’s perscription making them access Anywhere and Anytime.</span>
+                </div>
+                
+                <div class="v277_60">
+                    <span class="glyphicon glyphicon-signal" id="icon-2"></span>
+                    <span class="v277_61"> VISUALIZATION </span>
+                    <span class="v277_62">Enter your health record for regular health checkups and visualize your Daily Health Care Routines using graphs and charts.</span>
+                </div>
+
+
+                <div class="v277_63">
+                    <span class="glyphicon glyphicon-lock" id="icon-3"></span>
+                    <span class="v277_64">SAFE AND SECURE</span>
+                    <span class="v277_65">All your documents are safe and secure with us as we provide authentication and authorization for all users.</span>
+                </div>
+
+                <div class="v277_66">
+                    <span class="glyphicon glyphicon-check" id="icon-4"></span>
+                    <span class="v277_67">LIFETIME FREE</span>
+                    <span class="v277_68">Get instant access forever without paying any extra charges because your health is our No. 1 priority.</span>
+                </div>
+                
+            </div>
+		</div>
+	</body>
+</html>
+
+<script>
+    function goToDashboard() {
+        location.replace('/dashboard');
+    };
+</script>

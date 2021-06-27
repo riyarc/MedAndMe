@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .allergy_box{
+    width: 600px;
+    height: 170px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    top:170px;
+    /*left: 30%;*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 15px;
+  }
+  .allergy_box:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .ww{
+    width: 100%;
+    height: 51px;
+    background: rgba(196,196,196,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+
+  }
+
+  .allergy_for{
+    width: 100%;
+    height: 50px;
+    color: black;
+    position: fixed;
+    font-family: 'Baloo 2';
+    font-weight: Regular;
+    opacity: 1;
+    text-align: center;
+    font-size:  50px;
+    top: 90px;
+    /*left: 3%;*/
+    z-index: -1;
+    z-index: 1;
+    text-transform: uppercase;
+    background: rgba(240,241,248,1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .allergy_desc{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: center;
+    font-size:  26px;
+    top: 7%
+  
+  }
+
+  .allergy_medicine{
+    width: 100%;
+  color: black;
+  position: absolute;
+  font-family: Signika;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: left;
+  font-size:  23px;
+  top: 30%;
+  left: 3%;
+  
+  }
+
+  .medicine_label{
+    font-size:  22px;
+    color: rgba(71,71,71,1);
+
+  }
+
+  .medicine_name{
+
+  }
+
+  .allergy_symptom{
+    width: 100%;
+  color: black;
+  position: absolute;
+  font-family: Signika;
+  font-weight: Regular;
+  opacity: 1;
+  text-align: right;
+  font-size:  24px;
+  top: 30%;
+  right: 3%
+
+  }
+
+  .symptom_label{
+    font-size:  22px;
+    color: rgba(71,71,71,1);
+  }
+  .symptom_name{
+  
+  }
+
+  .allergy_cause{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: left;
+    font-size:  24px;
+    top: 70%;
+    left: 3%;
+  
+  }
+  .cause_label{
+    font-size:  22px;
+    color: rgba(71,71,71,1);
+  }
+
+  .allergy_info{
+    width: 100%;
+    color: black;
+    position: absolute;
+    font-family: Signika;
+    font-weight: Regular;
+    opacity: 1;
+    text-align: right;
+    font-size:  24px;
+    top: 70%;
+    right: 3%;
+  
+  }
+
+  .info_label{
+    font-size:  22px;
+    color: rgba(71,71,71,1);
+  }
+
+  .info_label{
+      
+  }
+  
+  

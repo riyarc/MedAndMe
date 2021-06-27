@@ -1,0 +1,72 @@
+{% extends "base_page.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class = "v553_86">
+    <div class = "v553_87">
+        <div class="measure_for">
+            Measurements for {{user}}
+        </div>
+        <button class="btn btn-primary" style="position: relative;">Add Measurements</button>
+        {% for grp in measurements %}
+        <!-- <div class="measure_box" > -->
+            <div class="gray_bar">
+                {% for msr in grp|slice:":1" %}
+            <div class="measure_name">
+                {{msr.group.name}}
+                <span class="glyphicon glyphicon-pencil" id="edit-icon"></span>
+			    <a href="/measure/delete/group/{{ msr.group.pk }}/" style="text-decoration: none; color: inherit;" onclick="return confirmation()">
+                    <span class="glyphicon glyphicon-trash" id="delete-icon"></span>
+                </a>
+            </div>
+            {% endfor %}
+            </div>
+            
+            <span class="records">
+
+                {% for msr in grp %}
+
+                <p>
+
+                    <span class="date_recorded">
+                        {{msr.date.date}}
+                    </span>
+                    <span class="magnitude">
+                        {{msr.magnitude}} {{msr.group.unit}}
+                    </span>
+                    <span class="safe_unsafe">
+                        {% if msr.magnitude < msr.group.lower_bound or msr.magnitude > msr.group.upper_bound %}
+                        <span class="unsafe">UNSAFE LEVELS</span>
+                            {% else %}
+                        <span class="safe">SAFE LEVELS</span>
+                            {% endif %}
+                    </span>
+
+                        <span class="glyphicon glyphicon-pencil" class="edit-icon2"></span>
+			            <a href="/measure/delete/{{ msr.pk }}/" style="text-decoration: none; color: inherit;" onclick="return confirmation()">
+                            <span class="glyphicon glyphicon-trash" class="delete-icon2"></span>
+                        </a>
+                            
+                </p>
+                <br>
+
+                {% endfor %}
+            </div>
+        <!-- </div> -->
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<div class="v539_86">
+            <div class="v539_88">ADD REPORT FILES</div>
+            <div class="v575_0">
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+    <!--                    <select name = "ailment_type" class="v575_2_3">-->
+    <!--                        <option>Eye</option>-->
+    <!--                        <option>Ear</option>-->
+    <!--                        <option>Skin</option>-->
+    <!--                        <option>Kidney</option>-->
+    <!--                        <option>Heart</option>-->
+    <!--                        <option>Other</option>-->
+    <!--                    </select>-->
+
+                    <p>
+                        <label class="v575_1_4"> Report File :-- </label>
+                        <input type= "file" name="file" class = "custom-file-input" multiple>
+                    </p>
+
+                    <input type="submit" value="ADD" class = "v575_3" >
+                </form>
+            </div>
+
+
+
+            <!-- <div class="">  <a class="v539_124" href="/record/view">View All Records</a></div> -->
+            <!-- <input type="" name=""> -->
+            <a href="/record/view"><button type="button" class="v539_123" > View All Records</button></a>
+
+
+
+        </div>
+    <!-- </body>
+
+</html> -->
+
+{% endblock content %}

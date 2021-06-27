@@ -1,0 +1,67 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/measurement.css' %}" rel="stylesheet" />
+    <title>Document</title>
+</head> -->
+
+<body>
+    <div class="c592_86">
+        <span class="c592_93">ADD MEASUREMENT </span>
+        <div class="c592_88">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p>
+                    <label class="c592_92_2">Date :--</label>
+                    <input type= "date" name="date" class = "c592_95_2">
+                </p>
+    
+                <p>
+                    <label class="c592_92_1">Magnitude:--</label>
+                    <input type= "number" name="magnitude" step="any" class = "c592_95_1">
+                </p>
+    
+                <p>
+    <!--                <label class="c592_92">Group :&#45;&#45;</label>-->
+    <!--                <input type= "text" name="group" class = "c592_95">-->
+    
+                    <label class="c592_92"> Group :-- </label>
+                    <select name = "group" class="c592_95">
+                        <option>None</option>
+                        {% for group in groups %}
+                            <option>{{group.name}}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+    
+    
+                <input type="submit" value="ADD" class = "c592_100" >
+            </form>
+
+        </div>
+        <!-- <div class="c_123">
+            <a class="add" href=/measure/add-group>Add Measurement Group</a>
+        </div> -->
+        <a href="/measure/add-group"><button type="button" class="add_measure" >Add Measurement Group</button></a>
+
+        <!-- <div class="c_124">
+            <a class="view" href=/measure/view> View Measurement Records</a>
+        </div> -->
+        <a href="/measure/view"><button type="button" class="view_measure" >View Measurement Records</button></a>
+        
+        
+    </div>
+<!-- </body>
+
+</html> -->
+
+{% endblock content %}

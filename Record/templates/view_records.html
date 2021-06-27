@@ -1,0 +1,85 @@
+{% extends "base_page.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <div class="v553_86"> -->
+
+	<div class="v553_87">
+		<div class="records_for">
+
+				Records for {{user}}
+<!--				<div class="container">-->
+<!--					<input type="text" placeholder="Search Records">-->
+<!--					<div class="search"></div>-->
+<!--				</div>-->
+
+		</div>
+		
+		{% for record in records %}
+		<div class="record_box" onclick="directTo({{record.pk}})">
+			<div class="v800">
+
+			</div>
+			<span class="record_date" >
+				Recorded on - {{record.date.date}}
+				<!-- <span class="glyphicon glyphicon-pencil" id="edit-icon"></span> -->
+				<a href="/record/delete/{{ record.pk }}/" style="text-decoration: none; color: inherit;" onclick="return confirmation()">
+					<span class="glyphicon glyphicon-trash" id="delete-icon"></span>
+				</a>
+			</span>
+
+			<span class="record_doctor">
+				<span class="doctor_label">
+					Doctor -
+				</span>
+				<span class="doctor_name">
+					{{record.doctor_name}}
+				</span>
+			</span>
+			<span class="record_hospital">
+				<span class="hospital_label">
+					Hospital -
+				</span>
+				<span class="hospital_name">
+					{{record.hospital_name}}
+				</span>
+			</span>
+			<span class="record_ailment">
+				<span class="ailment_label">
+					Ailment  -
+				</span>
+				<span class="ailment">
+					{{record.ailment_type}}
+				</span>
+			</span>
+		</div>
+		{% endfor %}
+	</div>
+<!-- </div> -->
+<!-- <h1>Records for {{user}}</h1>
+
+{% for record in records %}
+<ul>
+    <li>{{record.date.date}}</li>
+    <li>{{record.doctor_name}}</li>
+    <li>{{record.hospital_name}}</li>
+    <li>{{record.ailment_type}}</li>
+</ul>
+{% endfor %} -->
+
+{% endblock %}
+
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+
+    function directTo(pk) {
+		location.replace("/record/view/" + pk.toString() + "/");
+	};
+</script>
+
+
+{% endblock %}

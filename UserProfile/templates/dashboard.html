@@ -1,0 +1,43 @@
+{% extends "base_paper.html" %}
+{% load static %}
+
+{% block content %}
+<h1>{{user}}</h1>
+<h2>Current Medicines: {{med_count}}</h2>
+
+
+{% for med in curr_meds %}
+<ul>
+    <li>{{med.name}}</li>
+    <li>{{med.start_date}}</li>
+    <li>{{med.end_date}}</li>
+    <li>Repeats every {{med.repeat_magnitude}} {{med.repeat_unit}}(s)</li>
+    <li>Prescribed by: {{med.record.doctor_name}} on {{med.record.date}}</li>
+</ul>
+
+{% endfor %}
+
+
+
+<h1>Records for {{user}}</h1>
+
+{% for record in records %}
+<ul>
+    <li>{{record.date}}</li>
+    <li>{{record.doctor_name}}</li>
+    <li>{{record.hospital_name}}</li>
+    <li>{{record.ailment_type}}</li>
+</ul>
+{% endfor %}
+
+<h1>Reports for {{user}}</h1>
+    {% for report in reports %}
+    <ul>
+        <li>{{report.test_name}}</li>
+        <li>{{report.date.date}}</li>
+        <li>{{report.record.doctor_name}}</li>
+        <li>{{report.record.ailment_type}}</li>
+    </ul>
+    {% endfor %}
+
+{% endblock %}

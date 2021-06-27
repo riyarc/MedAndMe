@@ -1,0 +1,84 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% load static %} -->
+<!-- <!DOCTYPE html>
+<html>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+        <link href="{% static 'css/medicine_form.css' %}" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+
+    <body> -->
+        <div class="v457_110">
+            <span class="v467_17">ADD MEDICINES</span>
+            <div class="v467_12">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <p>
+                        <label class="v467_16"> Medicine’s Name :-- </label>
+                        <input type= "text" name="name" class = "v467_26">
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_1"> Start Date :-- </label>
+                        <input type= "date" name="start_date" class = "v467_26_1">
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_2"> End Date :-- </label>
+                        <input type= "date" name="end_date" class = "v467_26_2">
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_3"> Repeat Unit :-- </label>
+                        <select name = "repeat_unit" class="v467_26_3">
+                            <option>day</option>
+                            <option>week</option>
+                            <option>month</option>
+                            <option>hour</option>
+                            <option>year</option>
+                            <option>other</option>
+                        </select>
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_4"> Repeat Magnitude :-- </label>
+                        <input type= "number" name="repeat_magnitude" class = "v467_26_4">
+    
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_5"> Additional info :-- </label>
+                        <input type= "text" name="additional_info" class = "v467_26_5">
+                    </p>
+    
+                    <p>
+                        <label class="v467_16_6"> Record :-- </label>
+                        <select name = "record" class="v467_26_6">
+                            <option>None</option>
+                            {% for record in records %}
+                                <option>{{ record.pk }}. {{ record.date.date }} by Doc: {{ record.doctor_name }}
+                                    for Ailment: {{ record.ailment_type }}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+    
+                    <input type="submit" value="ADD" class = "v467_23" >
+    
+                </form>
+
+            </div>
+
+            
+        </div>
+    <!-- </body>
+
+</html> -->
+
+{% endblock content %}

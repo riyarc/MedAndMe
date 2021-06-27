@@ -1,0 +1,105 @@
+{% extends "base_page.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="data">
+    <div class="v800">
+
+    </div>
+
+    <span class="record_date1" onclick="directTo({{record.pk}})">
+        Recorded on - {{record.date.date}}
+    </span>
+
+    <span class="record_doctor1">
+        <span class="doctor_label1">
+            Doctor -
+        </span>
+        <span class="doctor_name1">
+            {{record.doctor_name}}
+        </span>
+    </span>
+
+
+    <span class="record_hospital1">
+        <span class="hospital_label1">
+            Hospital -
+        </span>
+        <span class="hospital_name">
+            {{record.hospital_name}}
+        </span>
+    </span>
+
+    
+    <span class="record_ailment1">
+        <span class="ailment_label1">
+            Ailment -
+        </span>
+        <span class="ailment1">
+            {{record.ailment_type}}
+        </span>
+    </span>
+</div>
+
+<!-- <div class="doctor">{{record.doctor_name}}</div> -->
+<a href="/record/add/{{pk}}/">
+    <button class="add_files" id="add-file">
+        Add More Files </button>
+</a>
+<a href="/record/delete/{{pk}}/">
+    <button class="delete_record" onclick="return confirmation()">
+        Delete Record</button>
+</a>
+<div class="area">
+    <!-- <a href="/record/add/{{pk}}/">
+        <button class="add_files" id="add-file">
+            Add More Files </button>
+    </a>
+    <a href="/record/delete/{{pk}}/">
+        <button class="delete_record" onclick="return confirmation()">
+            Delete Record</button>
+    </a> -->
+
+    {% if record_files %}
+    {% for file in record_files %}
+    <div class="a">
+        <img src="{{ file.file.url }}" alt="{{ file.file.url }}"  width="500" height="600">
+
+    </div>
+    
+    <br>
+    <div class="b">
+        <a href="/record/delete/file/{{ file.pk }}/">
+            <button class="delete_image" onclick="return confirmation()">Delete</button>
+            <br>
+        </a>
+        <br>
+    
+    </div>
+   
+    {% endfor %}
+
+    {% else %}
+    <p> No Records available!</p>
+
+
+    {% endif %}
+
+</div>
+
+<!-- <h1>{{record.doctor_name}}</h1> -->
+
+{% endblock %}
+
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+</script>
+
+
+{% endblock %}

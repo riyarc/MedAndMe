@@ -1,0 +1,107 @@
+{% extends "base_page.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<form action="{% url 'search' %}" method="GET">
+    <input type="text" name="search-query" id="search-query">
+    <label for="start-date" id="start-date-label">From</label>
+    <input type="date" name="start-date" id="start-date">
+    <label for="end-date" id="end-date-label">Till</label>
+    <input type="date" name="end-date" id="end-date">
+    <select id="search-for" onchange="setAttributesForModel()" name="search-for">
+        <option value="MeasurementGroup">MeasurementGroup</option>
+        <option value="Allergy">Allergy</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Record">Record</option>
+        <option value="Report">Report</option>
+<!--        <option value="Date">Date</option>-->
+    </select>
+    <select id="search-by" name="search-by" onchange="setPlaceholders()">
+        <option class="attributes MeasurementGroup" value="Group-Name">Group-Name</option>
+
+        <option class="attributes Allergy" value="Cause">Allergy-Cause</option>
+
+        <option class="attributes Allergy" value="Symptoms">Symptoms</option>
+        <option class="attributes Medicine" value="Medicine-Name">Medicine-Name</option>
+        <option class="attributes Record" value="Doctor-Name">Doctor-Name</option>
+        <option class="attributes Record" value="Hospital-Name">Hospital-Name</option>
+        <option class="attributes Record" value="Ailment-Type">Ailment-Type</option>
+        <option class="attributes Report" value="Test-Name">Test-Name</option>
+        <option class="attributes Record Medicine Report" value="Date">Date</option>
+    </select>
+    <button>Search</button>
+
+</form>
+
+{% endblock%}
+
+{% block script_content %}
+<script>
+var wanted = document.getElementById('search-for').value;
+var attributes = document.getElementsByClassName("attributes");
+var i;
+for(i=0; i<attributes.length; i++) {
+    attributes[i].setAttribute("disabled", "disabled");
+}
+for(i=0; i<attributes.length; i++) {
+    if(attributes[i].classList.contains(wanted)) {
+        attributes[i].removeAttribute("disabled");
+    }
+}
+document.getElementById('search-query').style.display = "inline";
+document.getElementById('start-date').style.display = "none";
+document.getElementById('end-date').style.display = "none";
+document.getElementById('start-date-label').style.display = "none";
+document.getElementById('end-date-label').style.display = "none";
+function setAttributesForModel() {
+    var wanted = document.getElementById('search-for').value;
+    if(wanted == "Date") {
+        setAttributesForDate();
+        return;
+    }
+    document.getElementById('search-query').style.display = "inline";
+    document.getElementById('start-date').style.display = "none";
+    document.getElementById('end-date').style.display = "none";
+    document.getElementById('start-date-label').style.display = "none";
+    document.getElementById('end-date-label').style.display = "none";
+    console.log(wanted);
+    var attributes = document.getElementsByClassName("attributes");
+    var i;
+    for(i=0; i<attributes.length; i++) {
+        attributes[i].setAttribute("disabled", "disabled");
+    }
+    var val = "null";
+    for(i=0; i<attributes.length; i++) {
+        if(attributes[i].classList.contains(wanted)) {
+            if(val == "null")
+                val = attributes[i].value;
+            attributes[i].removeAttribute("disabled");
+        }
+    }
+    document.getElementById('search-by').value = val;
+    console.log("Value:");
+    console.log(val);
+};
+
+function setAttributesForDate() {
+    document.getElementById('search-query').style.display = "none";
+    document.getElementById('start-date').style.display = "inline";
+    document.getElementById('end-date').style.display = "inline";
+    document.getElementById('start-date-label').style.display = "inline";
+    document.getElementById('end-date-label').style.display = "inline";
+};
+
+function setPlaceholders() {
+    var attr = document.getElementById('search-by').value;
+    var model = document.getElementById('search-for').value;
+
+    if(attr == "Date") {
+        return setAttributesForDate();
+    }
+};
+
+</script>
+
+{% endblock %}

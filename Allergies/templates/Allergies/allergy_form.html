@@ -1,0 +1,55 @@
+{% extends "base_page.html" %}
+{% load static %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--<head>-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />-->
+<!--    <link href="{% static 'css/allergy_form.css' %}" rel="stylesheet" />-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+{% block content %}
+    <div class="v502_86">
+        <span class="v502_93">ADD ALLERGY</span>
+        <div class="v502_88">
+            <form action="" method="POST"> 
+                {% csrf_token %}
+                <p>
+                    <label class="v502_92">Description :--</label>
+                    <input type= "text" name="description"  class = "v502_95">
+                </p>
+    
+                <p>
+                    <label class="v502_91"> Cause :--</label>
+                    <input type= "text" name="cause" class = "v502_96">
+                </p>
+    
+                <p>
+                    <label class="v502_90">Symptoms :--</label>
+                    <input type= "text" name="symptoms" class = "v502_97">
+                </p>
+    
+                <p>
+                    <label class="v502_89">Medicine :--</label>
+                    <input type= "text" name="medicine"  class = "v502_94">
+                </p>
+    
+                <p>
+                    <label class="v502_101">Additional notes :--</label>
+                    <input type= "text" name="additional_notes"  class = "v502_102">
+                </p>
+    
+        
+                <input type="submit" value="ADD" class = "v502_100" >
+        
+            </form>
+
+        </div>
+    </div>
+<!--</body>-->
+{% endblock %}
+<!--</html>-->

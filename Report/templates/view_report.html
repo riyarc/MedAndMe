@@ -1,0 +1,102 @@
+{% extends "base_page.html" %}
+{% load static %}
+{% block content %}
+
+<div class="data2">
+    <div class="v801">
+    </div>
+
+    <span class="report_test_name">
+        {{report.test_name}}
+    </span>
+
+    <span class="report_date">
+        {{report.date.date}}
+    </span>
+
+    <span class="report_doctor">
+        <span class="report_doctor_label">
+            Doctor -
+        </span>
+        <span class="report_doctor_name">
+            {{report.record.doctor_name}}
+        </span>
+    </span>
+
+    <span class="report_ailment">
+        <span class="report_ailment_label">
+            Ailment  -
+        </span>
+        <span class="report_ailment" style="position: relative">
+            {{report.record.ailment_type}}
+        </span>
+    </span> 
+
+</div> 
+
+
+
+<a href="/report/add/{{pk}}/">
+    <button class="add_files1" id="add-file">
+        Add More Files </button>
+</a>
+<a href="/report/delete/{{pk}}/">
+    <button class="delete_report" onclick="return confirmation()">
+        Delete Report</button>
+</a>
+
+<div class="area">
+
+    {% if report_files %}
+    {% for file in report_img %}
+    <div class="a">
+        <img src="{{ file.file.url }}" alt="{{ file.file.url }}"  width="500" height="600">
+
+    </div>
+    
+    <br>
+    <div class="b">
+        <a href="/report/delete/file/{{ file.pk }}/" style="text-decoration: none; color: inherit;">
+            <button class="delete_image" onclick="return confirmation()">Delete</button>
+            <br>
+        </a>
+        <br>
+    
+    </div>
+    {% endfor %}
+    <h1>PDF Files:</h1>
+    {% for file in report_pdf %}
+
+    <div class="a">
+        <a href = "/report/view/pdf/{{file.file.path}}" target="_blank" style="font-size: 25px; margin-bottom: 1%;">PDF-{{forloop.counter}}</a>
+    </div>
+    <br>
+
+    <div class="b">
+        <a href="/report/delete/file/{{ file.pk }}/">
+            <button class="delete_pdf" onclick="return confirmation()" style="margin-bottom: 5%;">Delete</button>
+            <br>
+        </a>
+    </div>
+
+    {% endfor %}
+    {% else %}
+    <p> No Records available!</p>
+
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block script_content %}
+<script>
+    function confirmation() {
+        return confirm("Are you sure?");
+    };
+
+</script>
+
+
+{% endblock %}

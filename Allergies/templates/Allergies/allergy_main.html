@@ -1,0 +1,54 @@
+{% extends "base_page.html" %}
+{% load static %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--<head>-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />-->
+<!--    <link href="{% static 'css/allergy_main.css' %}" rel="stylesheet"/>-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+
+<!--<body>-->
+{% block content %}
+
+    <div class="v501_11">
+        <span class="v501_20">YOUR ALLERGIES</span>
+
+        <!-- <div class="container"> -->
+        <div class="row" >
+            <div class="col-lg-2" >
+            </div>
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" >
+        <div class="v501_14">
+            <div class="v501_19"></div>
+            <!-- <div class="v501_15"> -->
+                <!-- <a href="/allergy/add/" class="v501_21">Add Allergy</a> -->
+                <a href="/allergy/add/"><button type="button" class="v501_15" > Add Allergy</button></a>
+
+            <!-- </div> -->
+            
+
+        </div>
+        </div>   
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" >
+
+        <div class="v501_13">
+            <div class="v501_18"></div>
+            <!-- <div class="v501_16">
+                <a href="/allergy/view/" class="v501_17">View Allergies</a>
+            </div> -->
+             <a href="/allergy/view/"><button type="button" class="v501_16" >View Allergies</button></a>
+
+            
+
+        </div>
+        </div>
+        <div class="col-lg-2" >
+            </div>
+        </div>
+    </div>
+<!--</body>-->
+{% endblock %}
+<!--</html>-->

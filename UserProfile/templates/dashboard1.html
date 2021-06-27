@@ -1,0 +1,267 @@
+{% extends 'base_page.html' %}
+{% load static %}
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--<head>-->
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Salsa&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/dashboard1.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        {% for grp in group_list %}
+            #chart{{grp.group.pk}} {
+              height: 10%;
+              width: 100%;
+              padding: 20px;
+              min-height: 100px;
+            }
+        {% endfor %}
+    </style>
+<!--</head>-->
+{% block content %}
+<!--<body>-->
+  <div class="dashboard_content">
+    <div class="row no-gutters">
+      <div class="col-lg-9">
+        <div class="row no-gutters" style="margin-top: 40px">
+
+          <div class="col-lg-4 ">
+            <div class="v644_105 ">
+                <span class="v644_109"></span>
+                <span class="glyphicon glyphicon-user" id= "doctor"></span>
+                <span class="v644_118">You have visited</span>
+                <span class="v644_123">Doctors</span>
+                <span class="v644_127">{{ doc_count }}</span>
+            </div>
+          </div>
+          
+          <div class="col-lg-4">
+            <a class="" href="/medicine/view/current/" style="text-decoration: none; color: inherit;">
+            <div class="v644_107 ">
+
+
+
+                <span class="v644_112"></span>
+                <span class="glyphicon glyphicon-list-alt" id="medicine"></span>
+                <span class="v644_120">You are consuming </span>
+                <span class="v644_124">Medicines</span>
+                <span class="v644_128">{{ med_count }}</span>
+
+
+            </div>
+            </a>
+          </div>
+           
+          <div class="col-lg-4" >
+            <a class="" href= "/allergy">
+            <div class="v644_108">
+            
+                <span class="v644_110"></span>
+                <span class="glyphicon glyphicon-warning-sign" id="allergy"></span>
+                <span class="v644_121">You need to care for</span>
+                <span class="v644_130">{{ allergy_count }}</span>
+                <span class="v644_125">Allergies</span>
+
+          
+            </div>
+              </a>
+          </div>
+
+        </div>
+        <div class="row" style="margin-top: 40px">
+          <div class=" col-lg-12">
+            <div class="v644_135">
+               
+                <div class="graph_container">
+
+                    {% for grp in context.group_list %}
+                        <div id="chart{{grp.group.pk}}"></div>
+                    {% endfor %}
+
+                </div>
+
+                <span class="d644_152">Statistics </span>
+                <span class="v644_152">Review your health</span>
+               
+                <select name="groups" id="groups" class="v644_157" onchange="changeMeasurement()">
+                    {% for grp in context.group_list %}
+                        <option value="{{grp.group.pk}}">{{grp.group.name}}</option>
+                    {% endfor %}
+                </select>
+        
+                <div class="v644_159"></div>
+
+                <span class="glyphicon glyphicon-signal" id="statistics"></span>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="row">
+        <div class="col-lg-12 ">
+        <div class="current_records" style="overflow: scroll; background: rgba(0, 0, 0, 0.1);">
+                  <h1 style="font-family: Signika;">Recent Updates</h1>
+                    {% for record in recent_records %}
+                    <a href="/record/view/{{record.pk}}/" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="margin: 1%; font-family: Signika; border-radius: 10px;">
+                      <div class="card-body" style="font-family: Signika;">
+                        <h5 class="card-title" style="font-family: Signika; font-weight: bolder; font-size: 3vh;">{{record.doctor_name}}</h5>
+                          <p class="card-text" style="font-family: Signika;">Date: {{record.date.date}}
+                              <br>Hospital: {{record.hospital_name}}
+                            <br>Ailment: {{record.ailment_type}}</p>
+                      </div>
+                    </div>
+                    </a>
+                    {% endfor %}
+            </div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+        <div class="blog_content">
+          <!-- <div class="v644_136"> -->
+                <span class="v644_153">Wellness Blogs </span>
+                <span class="d644_153">Know your health</span>
+                <div class="v644_160"></div>
+                <span class="glyphicon glyphicon-film", id="blogs"></span>
+
+
+                <div class="v644_166">
+                    <span class="v644_169">Mothers in Medicine More times than not, motherly advice is the best kind of advice. </span>
+                </div>
+                
+
+               <!--  <div class="v644_168">
+                    <span class="v644_170">The Fit Foodie The Fit Foodie makes it easy to stay on top of your health without sacrificing the tastes or lifestyle that you love.</span>
+
+                </div> -->
+                
+
+               <!--  <div class="v644_167">
+                    <span class="v644_171">Cancerwise Blog Some posts highlight survivor stories while others offer insight into treatment options to those who are affected by cancer.</span>
+                </div> -->
+
+                
+                
+                <a href="/blog/view" class="v644_172">Know More</a>
+
+            <!-- </div> -->
+        </div>
+      </div>
+      </div>
+      </div>
+     
+    </div>
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        
+      </div>
+      
+    </div> -->
+  </div>
+{% endblock %}
+
+{% block script_content %}
+<script>
+ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+var current = document.getElementById('groups')
+console.log('initial', 'chart'+current.value)
+{% for grp in context.group_list %}
+    elem = document.getElementById('chart{{grp.group.pk}}')
+    elem.style.display = 'none'
+{% endfor %}
+document.getElementById('chart'+current.value).style.display = 'block'
+    function changeMeasurement() {
+        var current = document.getElementById('groups')
+        console.log('initial', 'chart'+current.value)
+        {% for grp in context.group_list %}
+            elem = document.getElementById('chart{{grp.group.pk}}')
+            elem.style.display = 'none'
+        {% endfor %}
+        document.getElementById('chart'+current.value).style.display = 'block'
+    }
+    {% for grp in context.group_list %}
+    console.log('{{grp.group.name}}')
+    console.log('{{grp.min_x}}')
+
+    let myConfig{{grp.group.pk}} = {
+      type: "line",
+      "plotarea": {
+        "margin": "dynamic 45 60 dynamic",
+      },
+
+      "crosshair-x": {
+        "line-color": "#efefef",
+        "plot-label": {
+          "border-radius": "5px",
+          "border-width": "1px",
+          "border-color": "#f6f7f8",
+          "padding": "10px",
+          "font-weight": "bold"
+        },
+        "scale-label": {
+          "font-color": "#000",
+          "background-color": "#f6f7f8",
+          "border-radius": "5px"
+        }
+      },
+      'scale-x': {
+        'min-value': {{grp.min_x}},
+        step: "2day",
+        transform: {
+          type: "date",
+          all: "%m/%d/%Y<br>%h:%i:%s:%q %A"
+        },
+        item: {
+          'font-size':10
+        }
+      },
+      utc: true,
+      timezone: 0,
+
+      series: [
+        {
+          "values": {{grp.values}},
+          "text": "{{grp.group.name}}",
+          "line-color": "#009872",
+          "legend-item": {
+            "background-color": "#009872",
+            "borderRadius": 5,
+            "font-color": "white"
+          },
+          "legend-marker": {
+            "visible": false
+          },
+          "marker": {
+            "background-color": "#009872",
+            "border-width": 1,
+            "shadow": 0,
+            "border-color": "#69f2d0"
+          },
+          "highlight-marker": {
+            "size": 6,
+            "background-color": "#009872",
+          }
+        }
+      ]
+    }
+
+console.log('WORKING3')
+
+zingchart.render({
+  id: 'chart{{grp.group.pk}}',
+  data: myConfig{{grp.group.pk}},
+});
+
+{% endfor %}
+
+
+
+</script>
+{% endblock %}
+<!--</html>-->

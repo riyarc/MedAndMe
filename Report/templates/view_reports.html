@@ -1,0 +1,101 @@
+{% extends "base_page.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- <h1>Reports for {{user}}</h1>
+
+    {% for report in reports %}
+    <ul>
+        <li>{{report.test_name}}</li>
+        <li>{{report.date.date}}</li>
+        <li>{{report.record.doctor_name}}</li>
+        <li>{{report.record.ailment_type}}</li>
+    </ul>
+    {% endfor %}
+-->
+
+<!-- <div class="v553_86"> -->
+
+	<div class="v553_87">
+		<div class="reports_for">
+
+			Reports for {{user}}
+
+		</div>
+		{% for report in reports %}
+		<div class="report_box" id="report-box-{{report.pk}}" onclick="directTo({{report.pk}})">
+			<div class="v801">
+
+			</div>
+			<span class="report_test_name">
+				{{report.test_name}}
+			</span>
+			<span class="report_date">
+				{{report.date.date}}
+				<!-- <span class="glyphicon glyphicon-pencil" id="edit-icon"></span> -->
+				<a href="/report/delete/{{ report.pk }}/" style="text-decoration: none; color: inherit;">
+					<span class="glyphicon glyphicon-trash" id="delete-icon"></span>
+				</a>
+			</span>
+			<span class="report_doctor">
+				<span class="report_doctor_label">
+					Doctor -
+				</span>
+				<span class="report_doctor_name">
+					{{report.record.doctor_name}}
+				</span>
+			</span>
+			<span class="report_ailment">
+				<span class="report_ailment_label">
+					Ailment  -
+				</span>
+				<span class="eport_ailment">
+					{{report.record.ailment_type}}
+				</span>
+			</span> 
+
+			<!-- <span class="report_test_name">
+				{{report.test_name}}
+			</span>
+			<span = class="record_doctor">
+				<span class="doctor_label">
+					Doctor -
+				</span>
+				<span class="doctor_name">
+					{{record.doctor_name}}
+				</span>
+			</span>
+			<span class="record_hospital">
+				<span class="hospital_label">
+					Hospital -
+				</span>
+				<span class="hospital_name">
+					{{record.hospital_name}}
+				</span>
+			</span>
+			<span class="record_ailment">
+				<span class="ailment_label">
+					Ailment  -
+				</span>
+				<span class="ailment">
+					{{record.ailment_type}}
+				</span>
+			</span> -->
+		</div>
+		{% endfor %}
+	</div>
+<!-- </div> -->
+
+
+{% endblock %}
+
+{% block script_content %}
+<script>
+	function directTo(pk) {
+		location.replace("/report/view/" + pk.toString() + "/");
+	}
+</script>
+
+
+{% endblock %}

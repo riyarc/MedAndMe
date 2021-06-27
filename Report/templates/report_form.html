@@ -1,0 +1,66 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+    <link href="{% static 'css/report_form.css' %}" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body> -->
+    <div class="v592_101">
+        <span class="v592_108">ADD TEST REPORT</span>
+        <div class="v592_103">
+
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>
+                    <label class="v592_107"> Test Name :-- </label>
+                    <input type= "text" name="test_name" class = "v592_109">
+                </p>
+
+                <p>
+                    <label class="v592_107_1"> Date :-- </label>
+                    <input type= "date" name="date" class = "v592_109_1">
+                </p>
+
+                <p>
+                    <label class="v592_107_2"> Record :-- </label>
+    <!--                <input type= "text" name="record" class = "v592_109_2">-->
+                    <select name="record" class="v592_109_2">
+                        <option>None</option>
+                        {% for record in records %}
+                            <option>{{ record.pk }}. {{ record.date.date }} by Doc: {{ record.doctor_name }}
+                                for Ailment: {{ record.ailment_type }}</option>
+                        {% endfor %}
+                    </select>
+    <!--                <a href="{% url 'add_record' %}" target="_blank">Want to add record?</a>-->
+                </p>
+
+                <p>
+                    <label class="v592_107_3"> Report File :-- </label>
+                    <input type= "file" name="file" class = "custom-file-input-1" multiple>
+                </p>
+
+                <input type="submit" value="ADD" class = "v592_114" >
+
+            </form>
+        </div>
+
+        <!-- <div class="d539_123"></div> -->
+        <!-- <a class="d539_124" href="/report/view">View All Reports</a> -->
+        <a href="/report/view"><button type="button" class="v539_123" > View All Reports</button></a>
+
+    </div>
+<!-- </body>
+
+</html> -->
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+<h1>Add Measurement Group</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ grpform.as_p }}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+
+<h1>Add Measurements To Group:</h1>
+<ul>
+<!--    <li></li>-->
+<!--    {% if ind == 1 %}-->
+        <h1>{{value}}</h1>
+<!--    {% endif %}-->
+    {% for grp in groups %}
+        <li><a href=/measure/{{grp.pk}}/add/ >{{grp.name}}: {{grp.unit}}</a></li>
+<!--        <li><a href=/measure/{{grp.pk}}/add/ >{{grp.unit}}</a></li>-->
+    {% endfor %}
+</ul>

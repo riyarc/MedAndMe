@@ -1,0 +1,74 @@
+{% extends 'base_page.html' %}
+{% load static %}
+{% block content %}
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Siemreap&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet" />
+        <link href="{% static 'css/record_form.css' %}" rel="stylesheet" />
+        <title>Document</title>
+    </head>
+
+    <body> -->
+        <div class="v539_86">
+            <div class="v539_88">ADD RECORDS</div>
+            <div class="v575_0">
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p>
+                        <label class="v575_1"> Doctor’s Name :-- </label>
+                        <input type= "text" name="doctor_name" class = "v575_2">
+                    </p>
+
+                    <p>
+                        <label class="v575_1_1"> Hospital Name :-- </label>
+                        <input type= "text" name="hospital_name" class = "v575_2_1">
+                    </p>
+
+                    <p>
+                        <label class="v575_1_2"> Date of Visit :-- </label>
+                        <input type= "date" name="date" class = "v575_2_2">
+                    </p>
+
+                    <p>
+                        <label class="v575_1_3"> Ailment Type :-- </label>
+                        <input type="text" name="ailment_type" placeholder="For eg. Heart" class="v575_2_3">
+    <!--                    <select name = "ailment_type" class="v575_2_3">-->
+    <!--                        <option>Eye</option>-->
+    <!--                        <option>Ear</option>-->
+    <!--                        <option>Skin</option>-->
+    <!--                        <option>Kidney</option>-->
+    <!--                        <option>Heart</option>-->
+    <!--                        <option>Other</option>-->
+    <!--                    </select>-->
+                    </p>
+
+                    <p>
+                        <label class="v575_1_4"> Record File :-- </label>
+                        <input type= "file" name="file" class = "custom-file-input" multiple>
+                    </p>
+
+                    <input type="submit" value="ADD" class = "v575_3" >
+                </form>
+            </div>
+
+            
+
+            <!-- <div class="">  <a class="v539_124" href="/record/view">View All Records</a></div> -->
+            <!-- <input type="" name=""> -->
+            <a href="/record/view"><button type="button" class="v539_123" > View All Records</button></a>
+
+           
+
+        </div>
+    <!-- </body>
+
+</html> -->
+
+{% endblock content %}

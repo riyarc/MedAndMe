@@ -1,0 +1,9 @@
+{% load static %}
+<h1>   View Blogs </h1>
+{% for b in blog %}
+    <ul>
+        <li> {{ b.title}} </li>
+        <li>{{ b.author }}</li>
+        <li>{{ b.body }}</li>
+    </ul>
+{% endfor %}

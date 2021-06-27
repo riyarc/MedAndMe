@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ZingSoft Demo</title>
+
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+    {% for grp in group_list %}
+    #chart{{grp.group.pk}} {
+      height: 50%;
+      width: 100%;
+      padding: 20px;
+      min-height: 150px;
+    }
+    {% endfor %}
+
+    .zc-ref {
+      display: none;
+    }
+
+    </style>
+</head>
+
+<body>
+<h1>Graphs</h1>
+{% for grp in group_list %}
+<!--    <h1>{{grp.group.name}}</h1>-->
+    <div id="chart{{grp.group.pk}}"></div>
+{% endfor %}
+<script text="text/javascript">
+ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+    {% for grp in group_list %}
+    console.log('{{grp.group.name}}')
+    console.log('{{grp.min_x}}')
+
+    let myConfig{{grp.group.pk}} = {
+      type: "line",
+      "title": {
+        "text": "{{ grp.group.name }}",
+        "font-size": "24px",
+        "adjust-layout": true
+      },
+      "plotarea": {
+        "margin": "dynamic 45 60 dynamic",
+      },
+
+      "crosshair-x": {
+        "line-color": "#efefef",
+        "plot-label": {
+          "border-radius": "5px",
+          "border-width": "1px",
+          "border-color": "#f6f7f8",
+          "padding": "10px",
+          "font-weight": "bold"
+        },
+        "scale-label": {
+          "font-color": "#000",
+          "background-color": "#f6f7f8",
+          "border-radius": "5px"
+        }
+      },
+      'scale-x': {
+        'min-value': {{grp.min_x}},
+        step: "2day",
+        transform: {
+          type: "date",
+          all: "%m/%d/%Y<br>%h:%i:%s:%q %A"
+        },
+        item: {
+          'font-size':10
+        }
+      },
+      utc: true,
+      timezone: 0,
+
+      series: [
+        {
+          "values": {{grp.values}},
+          "text": "{{grp.group.name}}",
+          "line-color": "#009872",
+          "legend-item": {
+            "background-color": "#009872",
+            "borderRadius": 5,
+            "font-color": "white"
+          },
+          "legend-marker": {
+            "visible": false
+          },
+          "marker": {
+            "background-color": "#009872",
+            "border-width": 1,
+            "shadow": 0,
+            "border-color": "#69f2d0"
+          },
+          "highlight-marker": {
+            "size": 6,
+            "background-color": "#009872",
+          }
+        }
+      ]
+    }
+
+console.log('WORKING3')
+
+zingchart.render({
+  id: 'chart{{grp.group.pk}}',
+  data: myConfig{{grp.group.pk}},
+});
+
+{% endfor %}
+
+
+</script>
+</body>
+
+</html>
